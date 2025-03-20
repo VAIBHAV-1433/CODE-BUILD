@@ -1,0 +1,33 @@
+/* Center content vertically and horizontally */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;  /* Background color of the page */
+    flex-direction: column;
+  }
+  
+  /* Apply background gradient and text animation */
+  .text {
+    font-size: 3em;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, red, yellow, green, blue, purple);
+    color: transparent;
+    background-clip: text;
+    animation: colorChange 5s infinite;  /* Apply color change animation */
+  }
+  
+  /* Keyframe animation to transition the background gradient */
+  @keyframes colorChange {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
