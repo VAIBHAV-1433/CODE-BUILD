@@ -1,0 +1,15 @@
+# Serve Website 1 by default
+    server_name website1;
+
+    location / {
+        proxy_pass http://website1-container:80;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
+    # Route to Website 2
+    location /website2 {
+        proxy_pass http://website2-container:80;
+        proxy_set_header Host $host;
